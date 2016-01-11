@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<!-- /===================================/ -->
+<!-- THIS FORM GETS SENT TO BOB BUCKLY -->
+<!-- /===================================/ -->
+
+<html>
+<head>
+	<title>Profile Forms</title>	
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="styles.css" />
+
+</head>
+
+<body class="admin-login transparent">
+	<div class="wrapper">
+<!-- begin wrapper	 -->
+		<header>
+			<!-- navigation - we might not need this -->
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="index.html">NYS Expo Contract 2016</a></li>
+					<li><a href="product_listing.html">NYS Product Listing Form</a></li>
+					<li><a href="lunch_ticket.html">NYS Lunch Ticket Form</a></li>
+				</ul>
+			</nav>
+
+			<h1>N.Y.S. Highway &amp; Public Works Expo 2016</h1>
+			<h2><em>Produced by Profile Publications</em></h2>
+		</header>
+
+		<h2>Expo Contract Form</h2>
+
+		<div class="content">
+			<form action="" method="post" id="expo-contract">
+				<fieldset>
+					<legend><h3>Contact Information</h3></legend>
+					<div>
+		    			<label for="company">Company Name:</label>
+				        <input type="text" id="company" name="company" />
+				        <label for="disp-contact">Display Contact</label>
+				        <input type="text" id="disp-contact" name="disp-contact" />	
+				        <label for="address">Address</label>
+				        <input type="text" id="address" name="address" />
+				        <label for="phone">Phone</label>
+				        <input type="text" id="phone" name="phone" />		
+				        <label for="city">City</label>
+				        <input type="text" id="city" name="city" />		 
+				        <label for="state">State</label>
+				        <input type="text" id="state" name="state" />		 
+				        <label for="zip">Zip</label>
+				        <input type="text" id="zip" name="zip" />	   
+				        <label for="zip">Email</label>
+				        <input type="text" id="email" name="email" />		
+		    		</div>
+				</fieldset>
+				<fieldset>
+					<legend><h3>Select Booth(s) to Reserve</h3></legend>
+					<div>
+						<p>BOOTHS are $500.00 each and are reserved on a first come, best served basis.</p>
+						</p>BLOCKS and HALF BLOCKS are reserved on a first come, best served basis. 
+							Call Bob Buckley 800/992-7116.</p>
+					</div>
+		    		<div>
+				        <label for="num-booth">Number of Booths:</label>
+				        <input type="text" id="num-booth" name="num-booth"/>
+		    		</div>
+				    <div>
+				    	<h4>Preferred Booth Numbers</h4>
+				        <label for="pref-first">1st Choice:</label>
+				        <input type="text" id="pref-first" name="pref-first"/>		        
+				        <label for="pref-second">2nd Choice:</label>
+				        <input type="text" id="pref-second" name="pref-second"/>		
+				        <label for="pref-first">3rd Choice:</label>
+				        <input type="text" id="pref-third" name="pref-third" />
+				    </div>				    
+				    <div>
+				    	<h4>Preferred Floor</h4>
+				        <label for="area-first">1st Choice:</label>
+				        <input type="text" id="area-first" name="area-first" />		        
+				        <label for="area-second">2nd Choice:</label>
+				        <input type="text" id="area-second" name="area-second" />		
+				    </div>
+			    </fieldset>			
+			    <fieldset>
+					<legend><h3>Calculate Deposit</h3></legend>
+
+					<div>
+						<p>NOTE: All outdoor display space must be prepaid at time of contract. 
+							Include unit(s) measurements including 3' extra per dimension, and a 
+							description of the unit(s) to be displayed.</p>
+					</div>
+		    		<div>
+				        <label for="quant-booth">Quantity of Booths/Blocks:</label>
+				        <input type="text" id="quant-booth" name="quant-booth" />
+				        <label for="multiple">Multiplied By</label>
+				        <input type="text" id="multiply" name="multiply" />
+				        <label for="equals">Equals Total</label>
+				        <input type="text" id="equals" name="equals" />			        
+				        <label for="equals">Divided By 2 Equals 50&#37;
+						deposit due with contract - balance is due no later than 9/14/15</label>
+				        <input type="text" id="deposit" name="deposit"/>
+				        <label for="display">Our exhibit space will display the following equipment/trucks/products/services:</label>
+				        <textarea id="display" name="display"></textarea>
+		    		</div>
+		    	</fieldset>
+		    	<fieldset>
+		    		<legend><h3>Payment</h3></legend>
+		    		<div>
+		    			<p>Balance is due no later than XX/XX/2016. Please choose <strong>one</strong>
+		    		of the following payment options.</p>
+		    		</div>
+				    <div>
+				    	<h4>By Check</h4>
+				        <input type="radio" id="check" value="check" name="payment"/><label for="check">Check</label>
+				        <p>Payable to: Profile Publications, 361 Shoemaker Rd, Mohawk, NY 13407</p>
+				 		
+				 		<h4>By Credit Card</h4>
+				        <input type="radio" id="amex" value="amex" name="payment" /><label for="amex">American Express</label>
+				        <input type="radio" id="mastercard" value="mastercard" name="payment" /><label for="mastercard">Mastercard</label>
+				        <input type="radio" value="visa" id="visa" name="payment" /><label for="visa">Visa</label>
+				    </div>
+			    </fieldset>
+		    	<fieldset>
+		    		<legend><h3>Read and Accept Terms</h3></legend>
+					<div>
+						<div class="terms-text">
+							<p><h4>CONTRACT TERMS</h4>MANAGEMENT - The NYS Highway & Public Works Expo is produced and managed by Profile Publications, 361 Shoemaker Rd, Mohawk, NY 13407. Any reference to management herein refers to same.
+							LIABILITY LIMITATIONS - The undersigned exhibiting company and its assigns shall make no claims for any reason whatsoever against Expo management, the Empire Expo Center, the New York State Industrial Exhibit Authority or any representatives thereof for any reason.
+							EXHIBITOR RESPONSIBILITIES - Exhibiting company acknowledges full understanding of and agrees to full compliance with all terms, conditions, rules and responsibilities set forth page document, which includes this contract, known as the 2015 Exhibitor Registration Pack.
+							INSURANCE - Exhibitor agrees to carry insurance covering itself from any and all damages, real or personal, throughout the entire three day event, which includes set-up, Expo, and tear- down days. Exhibitor agrees to purchase a general liability policy with a face value of no less than $1,000,000.00, naming Profile Publications as additionally insured for the duration of the three days mentioned above. A copy of such policy shall be sent to Profile Publications on or before the day final payment for exhibit space is made. Management is in no way responsible for exhibitor's employees or property. Management will carry a general liability policy to cover exhibit visitors, exhibitors, and their agents. Exhibitor agrees to hold management harmless for any loss, cost, damage or expense resulting from any and all suit brought against exhibitor for any reason.
+							SAFETY - Exhibitor agrees to comply with all local, state and federal safety codes and regulations. Exhibitor shall be responsible for prudent adherence to all safety practices before, during and after the Expo.
+							PAYMENT - Exhibitor agrees to send 50% deposit due with this contract and to pay the balance due for the exhibit space no later than 9/15/15. No exhibitor will be allowed to set up display unless payment in full has been received by Profile Publications per the terms set forth herein. Any exhibitor failing to cancel space reservation, and failing to occupy reserved space shall be responsible for full payment owed under this contract. Unoccupied space at the end of the set-up day shall be usable by management in any way it chooses, with no obligation to exhibitor whatsoever.
+							SECURITY - Exhibitor agrees to fully cooperate with security personnel as needed. Management will make every effort to protect property throughout the event, but is not responsible for any damages resulting from security failures. Round the clock surveillance of the facility will be provided by management and the Empire Expo Center.
+							DESIGN STANDARDS - All booths come equipped with back and side drapes which must be kept in place throughout the event. The "City Street" floor plan cannot be obstructed by any portion of a display protruding beyond its predetermined boundaries. Management reserves the right to modify or remove any displays not fully complying with these design standards. FOOD AND BEVERAGE - The only food and beverage to be served in the building must be purchased from the Expo Center restaurant located in the Ameritech Center of Progress. Exhibitors wishing to purchase food/meals should contact management 30 days prior to the Expo for details on who to contact.
+							COURTESY & CONTESTS - Legal contests, raffles or drawings may only be announced by the exhibitor conducting such contest, raffle or drawing. All exhibitors shall fully cooperate with one another in the interest of the overall appearance and presentation of the Expo. No exhibitor shall position any display matter (tangible, audio or video) in such a manner that it adversely affects a neighboring display.
+							GENERAL - Any matters not covered in the Exhibitors Pack shall be subject to the scrutiny and final decision of the management.
+							ALL STEEL GROUSER TRACKED equipment must be planked in and out to avoid any damage to the concrete floor. Ignition keys should be removed from machines, batteries disconnected, fuel caps secured in place, and hydraulic cylinders properly braced if they are extended.
+							BOOTHS, BLOCKS AND OUTDOOR DISPLAY Spaces are assigned on a "first come, best served basis." Please be sure to register early for best selection and to ensure availability of space.
+							SHOW MANAGEMENT RESERVES THE RIGHT to alter display setups to ensure the overall effective and fair use of space in the best interest of all exhibitors concerned.
+							Note the "SETUP - SHOW TIMES & TEAR DOWN" section in this pack. All tear down must be complete, and the building vacated by 8 p.m. on Wednesday, October 21, 2015 at the latest.
+							ALL INFORMATION CONTAINED IN THIS LIST OF EHHIBITOR RESPONSIBILITIES must be thoroughly understood by the party signing the Space Reservation Contract. Full compliance with all exhibitor responsibilities will be strictly enforced to ensure a smooth expo.
+							CANCELLATIONS MUST BE MADE IN WRITING no later than July 31st, 2015. Written cancellations received by that date will be entitled
+							to a refund of monies paid, less a 25% cancellation fee. Cancellations made after July 31st, 2015 will not be entitled to any refund.
+							PROFILE PUBLICATIONS RESERVES THE RIGHT to use the names and or photographs of all exhibitors submitting a space reservation
+							contract in promotional and editorial coverage of the Expo.
+							FORKLIFT SERVICE, electrical service, pressure washing equipment, food and beverage and other services provided for the smooth operation of the expo are subcontracted.
+							PROFILE PUBLICATIONS IS NOT RESPONSIBLE for the potential nonperformance of subcontracted employees or vendors.
+							ALL ARRANGEMENTS FOR SHIPMENTS of exhibitor materials to and from the expo are the sole responsibility of the exhibitor as are any receiving and storage costs at the Americraft Center of Progress. Arrangements can be made by calling the Empire Expo Center at 315/487-7711.
+							ARRANGEMENTS FOR SPECIAL DECORATING NEEDS such as carpeting, lights, additional tables, etc. can be made by calling the contracted
+							decorator : Northeast Decorating at 315-471-9989. Payment for additional decorating items requested by exhibitors will be made directly to the decorating firm by the exhibitor.</p>
+						</div>
+					</div>
+					<div>
+						<input type="checkbox" value="true" name="terms" id="terms">
+						<label for="terms">I have read and will comply with the <a href="#">terms of agreement</a> set forth in my exhibitor's registration pack.</label>
+					</div>
+		    	</fieldset>
+			    <button type="submit" name="submit" id="submit-contract">Submit</button>
+			</form>
+	<!-- end content -->
+		</div>
+<!-- end wrapper -->
+	</div>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>
+<script src="main.js"></script>
+
+</body>
+</html>
+
+

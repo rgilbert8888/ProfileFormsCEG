@@ -1,18 +1,17 @@
 <!DOCTYPE html>
 
-<!-- /===================================/ -->
-<!-- THIS FORM GETS SENT TO BOB BUCKLY -->
-<!-- /===================================/ -->
-
 <html>
 <head>
 	<title>Profile Forms</title>	
 	<meta charset="UTF-8">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" />
 	<link rel="stylesheet" href="styles.css" />
+	
+
 
 </head>
 
-<body class="admin-login transparent">
+<body>
 	<div class="wrapper">
 <!-- begin wrapper	 -->
 		<header>
@@ -29,53 +28,115 @@
 			<h1>N.Y.S. Highway &amp; Public Works Expo 2016</h1>
 			<h2><em>Produced by Profile Publications</em></h2>
 		</header>
-		<p class="serialized"></p>
-		<h2>Expo Registration Form</h2>
+		
+		<div>
+			<h2>Expo Pricing Guide</h2>
+			<div class="table-holder">
+				<table class="pricing">
+					<tr>
+						<th>Space</th>
+						<th>Measurements</th>
+						<th>Price</th>
+					</tr>
+					<tr>
+						<td>HALF TOWN BLOCK (D1, D2)</td>
+						<td>20'x30'</td>
+						<td>$1500</td>
+					</tr>				
+					<tr>
+						<td>HALF CITY BLOCK (K1, K2, T1, T2)</td>
+						<td>20'x40'</td>
+						<td>$1575</td>
+					</tr>				
+					<tr>
+						<td>ANNEX (U1-U5)</td>
+						<td>20'x40'</td>
+						<td>$1455</td>
+					</tr>				
+					<tr>
+						<td>TOWN BLOCK (A, B, C, D, E, F, G, H, I, J)</td>
+						<td>30'x40'</td>
+						<td>$2040</td>
+					</tr>				
+					<tr>
+						<td>CITY BLOCK (L, M, N, O, P, Q, R, S)</td>
+						<td>40'x40'</td>
+						<td>$2120</td>
+					</tr>				
+					<tr>
+						<td>NORTH WING (V1, V2)</td>
+						<td>20'x30'</td>
+						<td>$1210</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
 
 		<div class="content">
-			
+			<h2>Expo Registration Form</h2>
 
 			<form action="" method="post" id="contact-information">
 				<fieldset>
 					<legend><h3>Contact Information</h3></legend>
 					<div>
-		    			<label for="company">Company Name:</label>
-				        <input type="text" id="company" name="company" />
-				        <label for="disp-contact">Display Contact</label>
-				        <input type="text" id="disp-contact" name="disp-contact" />	
-				        <label for="address">Address</label>
-				        <input type="text" id="address" name="address" />
-				        <label for="phone">Phone</label>
-				        <input type="text" id="phone" name="phone" />		
-				        <label for="city">City</label>
-				        <input type="text" id="city" name="city" />		 
-				        <label for="state">State</label>
-				        <input type="text" id="state" name="state" />		 
-				        <label for="zip">Zip</label>
-				        <input type="text" id="zip" name="zip" />	   
-				        <label for="zip">Email</label>
-				        <input type="text" id="email" name="email" />		
-		    		</div>
+	    				<label for="company">Company Name:</label>
+			        	<input type="text" id="company" name="company" />
+			        </div>
+			        <div>
+			        	<label for="disp-contact">Display Contact:</label>
+			        	<input type="text" id="disp-contact" name="disp-contact" />	
+			        </div>
+			        <div>
+			       		<label for="zip">Email:</label>
+			        	<input type="text" id="email" name="email" />
+			        </div>	
+
+			        <div>
+			        	<label for="address">Address:</label>
+			        	<input type="text" id="address" name="address" />
+			        </div>
+			        <div>	
+			        	<label for="city">City:</label>
+			        	<input type="text" id="city" name="city" />		 
+			        </div>
+			        <div>
+			       		<label for="state">State:</label>
+			        	<input type="text" id="state" name="state" />		 
+			        </div>
+			        <div>
+			        	<label for="zip">Zip:</label>
+			        	<input type="text" id="zip" name="zip" />	   
+			        </div>
+			        <div>
+			        	<label for="phone">Phone:</label>
+			        	<input type="text" id="phone" name="phone" />	
+			        </div>
+			        <div>
+			       		<label for="zip">Fax:</label>
+			        	<input type="text" id="email" name="email" />
+			        </div>		
+	    
 				</fieldset>
 			</form>
 			<!-- listing information -->
 			<form action="" method="post" id="product-listing">
 				<fieldset>
-					<legend><h3>Listing Details</h3></legend>
+					<legend><h3>Free Listing Details</h3></legend>
 					<div class="notes">
 						<p>As part of the pre-show publicity, we will be happy to give you a free listing in the October issue of Superintendent's Profile. This is an opportunity for you to let our subscribers know what product lines you'll be displaying at the Expo. To participate, please complete the form below.</p>
 					</div>
 					<div>
 				       	<input type="radio" id="use-lastyr" name="listing-choice" value="use-lastyr"/><label for="use-lastyr">Use Last Year's Listing</label>
 				       	<input type="radio" id="use-new" name="listing-choice" value="use-new"/><label for="use-new">Use a New Listing</label>
-					<!-- hidden until user selects "new listing radio button" -->
-						<div class="new-description">
-							<label for="new-description">Product Description:</label>
-							<textarea name="new-description" placeholder="new description here"></textarea>
-						</div>
+					</div>
+					<div class="new-description">
+						<label for="new-description">Product Description:</label>
+						<textarea name="new-description" placeholder="new description here"></textarea>
 					</div>
 				</fieldset>
 			</form>
+
 			<form action="" method="post" id="booth-personnel">
 				<fieldset>
 					<legend><h3>Booth Personnel Badges</h3></legend>
@@ -102,34 +163,37 @@
 				</fieldset>
 			</form>
 
-
-			<form action="" method="post" id="lunch-ticket">
-				<fieldset>
-					<legend><h3>Lunch Tickets</h3></legend>
-					<div class="notes"><p>Tickets can be picked up at the show office when you check-in on set-up day.</p></div>
-					<div>
-		    			<label for="lunch-quant">Number of Tickets at $10.00 Each:</label>
-				        <input type="text" id="lunch-quant" name="lunch-quant" />
-						<label for="lunch-total">Total:</label>
-				        <input type="text" name="lunch-total" id="lunch-total">
-					</div>
-				</fieldset>
-			</form>
-
 			<form action="" method="post" id="booth-information">
 				<fieldset>
 					<legend><h3>Select Booth(s) to Reserve</h3></legend>
 					<div class="notes">
-						<p>BOOTHS are $500.00 each and are reserved on a first come, best served basis.</p>
-						</p>BLOCKS and HALF BLOCKS are reserved on a first come, best served basis. 
-							Call Bob Buckley 800/992-7116.</p>
+						<p>BOOTHS are <strong>$500.00 each</strong> and are reserved on a first come, best served basis.</p>
 					</div>
 		    		<div>
-				        <label for="num-booth">Number of Booths:</label>
-				        <input type="text" id="num-booth" name="num-booth"/>
+				        <label for="qty-booth">Number of Booths:</label>
+				        <input type="text" id="qty-booth" name="qty-booth"/> 
+				        
+				        <label for="equals">Booth Total:</label>
+				        <input type="text" id="equals" name="equals" value="0.00" readonly="readonly" />			       
+		    		</div>		
+		    		<div class="notes">
+		    			<p>BLOCKS and HALF BLOCKS are priced as shown above and reserved on a first come, best served basis. 
+						Please check off your choices below.</p>
+		    		</div>    		
+		    		<div class="align-checkbox">
+				        <span><input type="checkbox" id="half-town" name="half-town" value="1500.00" /><label for="half-town">Half Town Block</label></span>
+				        <span><input type="checkbox" id="half-city" name="half-city" value="1575.00" /><label for="half-city">Half City Block</label></span>
+				        <span><input type="checkbox" id="annex" name="annex" value="1455.00" /><label for="annex">Annex</label></span>
+				        <span><input type="checkbox" id="town-block" name="town-block" value="2040.00"/><label for="town-block">Town Block</label></span>
+				        <span><input type="checkbox" id="city-block" name="city-block" value="2120.00"/><label for="city-block">City Block</label></span>
+				        <span><input type="checkbox" id="north-wing" name="north-wing" value="1210.00"/><label for="north-wing">North Wing</label></span>
+				        
+				   
 		    		</div>
+		    		<label for="qty-block">Block Total:</label>
+				        <input type="text" id="qty-block" name="qty-block" value="0.00" readonly="readonly" />			       
 				    <div>
-				    	<h4>Preferred Booth Numbers</h4>
+				    	<h4>Preferred Booth/Block Number(s)</h4>
 				        <label for="pref-first">1st Choice:</label>
 				        <input type="text" id="pref-first" name="pref-first"/>		        
 				        <label for="pref-second">2nd Choice:</label>
@@ -149,44 +213,75 @@
 
 			<form action="" method="post" id="calc-booth-deposit">	
 			    <fieldset>
-					<legend><h3>Calculate Deposit</h3></legend>
-					<div class="notes">
+					<legend><h3>Booth Deposit</h3></legend>
+
+		    		<div>
+				        <label for="equals">50&#37; Deposit of Booth Cost Due with Your Contract Submission:</label>
+				        <input type="text" id="deposit" name="deposit" type="text" value="0.00" readonly="readonly" />
+				        
+				        <!-- <p>Balance is due no later than 9/14/15</p> -->
+				    </div>
+				    <div class="notes">
 						<p>NOTE: All outdoor display space must be prepaid at time of contract. 
 							Include unit(s) measurements including 3' extra per dimension, and a 
 							description of the unit(s) to be displayed.</p>
 					</div>
-		    		<div>
-				        <label for="quant-booth">Quantity of Booths/Blocks:</label>
-				        <input type="text" id="quant-booth" name="quant-booth" />
-				        <label for="multiple">Multiplied By</label>
-				        <input type="text" id="multiply" name="multiply" />
-				        <label for="equals">Equals Total</label>
-				        <input type="text" id="equals" name="equals" />			        
-				        <label for="equals">Divided By 2 Equals 50&#37;
-						deposit due with contract - balance is due no later than 9/14/15</label>
-				        <input type="text" id="deposit" name="deposit"/>
-				        <label for="display">Our exhibit space will display the following equipment/trucks/products/services:</label>
+					<div>
+				        <label for="display">Our exhibit space will display the following equipment/trucks/products/services:</label><br />
 				        <textarea id="display" name="display"></textarea>
 		    		</div>
 		    	</fieldset>
 		    </form>
 
-		    <form action="" method="post" id="payment-information">
+		    <form action="" method="post" id="lunch-ticket">
+				<fieldset>
+					<legend><h3>Lunch Tickets</h3></legend>
+					<div class="notes"><p>Tickets are <strong>$10.00 each</strong> and can be picked up at the show office when you check-in on set-up day.</p></div>
+					<div>
+		    			<label for="lunch-qty">Number of Tickets:</label>
+				        <input type="text" id="lunch-qty" name="lunch-qty" />
+						<label for="lunch-total">Lunch Total:</label>
+				        <input type="text" name="lunch-total" id="lunch-total" value="0.00" readonly="readonly">
+					</div>
+				</fieldset>
+			</form>
+
+		    <form action="" method="post" id="balance">
 		    	<fieldset>
-		    		<legend><h3>Payment</h3></legend>
-		    		<div class="notes">
-		    			<p>Balance is due no later than XX/XX/2016. Please choose <strong>one</strong>
-		    		of the following payment options.</p>
+		    		<legend><h3>Remaining Balance</h3></legend>
+		    		
+		    		<div>
+		    			<label for="remaining-balance">Remaining Balance for Booth(s) &amp; Lunch Ticket(s):</label>
+		    			<input id="remaining-balance" name="remaining-balance" value="0.00" type="text" readonly="readonly" >
 		    		</div>
+
+		    		<div class="notes">
+		    			<p>Your balance is due no later than XX/XX/2016. Please choose <strong>one</strong>
+		    			of the following payment options.</p>
+		    		</div>
+		    	</fieldset>
+		    </form>
+
+		    <form action="" method="post" id="payment-information">
+		    	 <fieldset>
+		    	 	<legend><h3>Payment Method</h3></legend>
 				    <div>
 				    	<h4>By Check</h4>
-				        <input type="radio" id="check" value="check" name="payment"/><label for="check">Check</label>
-				        <p>Payable to: Profile Publications, 361 Shoemaker Rd, Mohawk, NY 13407</p>
+				        <input type="radio" id="check" value="check" name="payment-method"/><label for="check">Check - Payable to Profile Publications, 361 Shoemaker Rd, Mohawk, NY 13407</label>
+
+				        <p>Pleas mail checks to xxxx.</p>
+				        
 				 		
 				 		<h4>By Credit Card</h4>
-				        <input type="radio" id="amex" value="amex" name="payment" /><label for="amex">American Express</label>
-				        <input type="radio" id="mastercard" value="mastercard" name="payment" /><label for="mastercard">Mastercard</label>
-				        <input type="radio" value="visa" id="visa" name="payment" /><label for="visa">Visa</label>
+				 			<div>
+				        		<input type="radio" id="amex" value="amex" name="payment-method" /><label for="amex">American Express</label>
+				        	</div>
+				        		<div><input type="radio" id="mastercard" value="mastercard" name="payment-method" /><label for="mastercard">Mastercard</label>
+				        	</div>
+				        	<div>
+				        		<input type="radio" value="visa" id="visa" name="payment-method" /><label for="visa">Visa</label>
+				        	</div>
+				        <p>Please call us at xxx to provide your full credit card information.</p>
 				    </div>
 			    </fieldset>
 			</form>
@@ -223,7 +318,7 @@
 						</div>
 					</div>
 					<div>
-						<input type="checkbox" value="true" name="terms" id="terms">
+						<input type="checkbox" value="true" name="accept" id="accept">
 						<label for="terms">I have read and will comply with the <a href="#">terms of agreement</a> set forth in my exhibitor's registration pack.</label>
 					</div>
 		    	</fieldset>
@@ -234,6 +329,7 @@
 		</div>
 <!-- end wrapper -->
 	</div>
+
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
 <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.0/jquery-ui.min.js"></script>

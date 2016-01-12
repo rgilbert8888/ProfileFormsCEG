@@ -1,5 +1,92 @@
 $(document).on('ready', function(){
 	// alert("hi");
+	var blocks = [];
+$('#booth-information :checkbox').on('change', function(){
+	value = $(this).val();
+	// console.log($(this).val());
+	if(this.checked) {
+		console.log("checked");
+		blocks.push(value);
+
+	} else {
+		var index = blocks.indexOf(this);
+		blocks.splice(index, 1);
+	}
+console.log(blocks);
+}); 
+
+// arguments: start position, number of elements to delete
+//console.log( ar.splice(3, 2) ); // ["a", "b"]
+
+// on the click of any of these specific inputs, do this one big function that runs all other funcs
+
+	function getLunchCost(){
+		
+		var quantity = $('#lunch-qty').val(); 
+		var totalLunch = quantity * 10;
+		var lunchCost = totalLunch.toFixed(2);
+
+		$('#lunch-total').val(lunchCost);  // forces number to 2 decimal places
+
+		return totalLunch;
+
+	}
+
+	function getBoothCost(){
+		
+		var quantity = $('#qty-booth').val(); 
+		var totalBooth = quantity * 500;
+		var boothCost = totalBooth.toFixed(2);
+
+		$('#equals').val(boothCost);  // forces number to 2 decimal places
+	
+		return totalBooth;
+
+	}
+
+	function getBlockCost() {
+
+	}
+
+
+	function getDepositCost(){
+
+		var boothCost = getBoothCost();
+		var totalDeposit = boothCost / 2;
+		var depositCost = totalDeposit.toFixed(2);
+
+		$('#deposit').val(depositCost);  // forces number to 2 decimal places
+
+		return totalDeposit;
+	}
+
+
+// GET REMAINING BALANCE FOR BOOTH AND LUNCH AFTER 50% BOOTH DEPOSIT IS SUBTRACTED:
+	function getRemainder() {
+		var remainingBalance = getLunchCost() + getDepositCost();
+		
+		$('#remaining-balance').val(remainingBalance.toFixed(2));
+	}
+
+
+
+	function getTotalCost(){
+
+		var totalCost = getLunchCost() + getBoothCost() + getDepositCost();
+		console.log("total:" , totalCost);
+
+	}
+
+$("#lunch-qty, #qty-booth").on('keyup', function(){
+	getRemainder();
+});
+
+// $("#lunch-qty, #qty-booth").on('keyup', function(){
+// 	getTotalCost();
+// });
+
+
+
 
 // NON PHP OPTION: SENDS ALL FORM INFO TO EMAIL 
 
@@ -12,6 +99,7 @@ $(document).on('ready', function(){
 			var lunchTicket = $('#lunch-ticket').serializeArray();
 			var boothInfo = $('#booth-information').serializeArray();
 			var depositAmt = $('#calc-booth-deposit').serializeArray();
+			var remainingBalance = $('#balance').serializeArray();
 			var paymentInfo = $('#payment-information').serializeArray();
 			var expoContract = $('#expo-contract').serializeArray();
 
@@ -59,6 +147,13 @@ $(document).on('ready', function(){
 			$.map(depositAmt, function(val){
            		if(!val) return;
           			messageBody += val.name + ": " + val.value + '\n';
+         		});			
+
+			messageBody += '\nREMAINING BALANCE\n'
+
+			$.map(remainingBalance, function(val){
+           		if(!val) return;
+          			messageBody += val.name + ": " + val.value + '\n';
          		});
 
 			messageBody += '\nPAYMENT INFO\n'
@@ -90,6 +185,7 @@ $(document).on('ready', function(){
 });
 
 
+/// old stuff 
 
 	// $( "#expo-contract" ).on( "submit", function(e){
 	// 	  e.preventDefault();
@@ -121,3 +217,25 @@ $(document).on('ready', function(){
 	// 		});
 	// 	  // POST message2 to processing page...
 	// 	});	
+
+//////
+
+	// $("#lunch-qty").on('keyup', function(){
+		
+	// 	var quantity = $(this).val(); 
+	// 	var total = quantity * 10;
+
+	// 	$('#lunch-total').val(total.toFixed(2));  // forces number to 2 decimal places
+	// });
+
+
+	// $("#lunch-total").on('change', function(){
+	// 	alert('foo');
+		
+	// 	// var quantity = $(this).val(); 
+	// 	// var total = quantity * 10;
+
+	// 	// $('#lunch-total').val(total.toFixed(2));  // forces number to 2 decimal places
+	// });
+
+

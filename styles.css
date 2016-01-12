@@ -15,6 +15,10 @@ form div {
 	
 }
 
+label{ 
+	color: red;
+}
+
 #submit {
 	
 }
@@ -23,4 +27,8 @@ div.terms-text{
 	border: 1px solid #ccc;
 	height: 100px;
 	overflow: scroll;
+}
+
+.notes {
+	color:blue;
 }

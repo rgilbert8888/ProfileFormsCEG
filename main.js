@@ -1,24 +1,42 @@
+var blocks = [];
+
 $(document).on('ready', function(){
 	// alert("hi");
-	var blocks = [];
-$('#booth-information :checkbox').on('change', function(){
-	value = $(this).val();
-	// console.log($(this).val());
-	if(this.checked) {
-		console.log("checked");
-		blocks.push(value);
 
-	} else {
-		var index = blocks.indexOf(this);
-		blocks.splice(index, 1);
-	}
-console.log(blocks);
+	$('#booth-information :checkbox').on('change', function(){
+		value = $(this).val();
+	// console.log($(this).val());
+		if(this.checked) {
+			console.log("checked");
+			blocks.push(value);
+		} else {
+			var index = blocks.indexOf(this);
+			blocks.splice(index, 1);
+		}
+	
+		console.log("array: ", blocks);
+
+		var total = 0; 
+
+		$.each(blocks, function(i,val){
+			console.log('value',val);
+			total += Number(val);
+		});
+
+	console.log('total',total);
+	var totalBlock = total.toFixed(2);
+	$('#qty-block').val(totalBlock);
+
 }); 
+
 
 // arguments: start position, number of elements to delete
 //console.log( ar.splice(3, 2) ); // ["a", "b"]
 
 // on the click of any of these specific inputs, do this one big function that runs all other funcs
+
+
+
 
 	function getLunchCost(){
 		
@@ -46,6 +64,20 @@ console.log(blocks);
 
 	function getBlockCost() {
 
+		var checked = $('#booth-information :checked');
+		var total = checked.map(function(){
+			return this.value;
+			console.log(value);
+		}).get();
+
+		var totalBlock = 0;
+		$.each(checked, function(i, checkBox){
+			var value = checkBox.value;
+			totalBlock += Number(value);
+		});
+
+		return totalBlock; // returns total of array number values
+		console.log(totalBlock);
 	}
 
 

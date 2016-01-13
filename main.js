@@ -1,34 +1,33 @@
+// var blocks = [];
+
 $(document).on('ready', function(){
-	// alert("hi");
-	var blocks = [];
-$('#booth-information :checkbox').on('change', function(){
-	value = $(this).val();
-	// console.log($(this).val());
-	if(this.checked) {
-		console.log("checked");
-		blocks.push(value);
 
-	} else {
-		var index = blocks.indexOf(this);
-		blocks.splice(index, 1);
-	}
-console.log(blocks);
-}); 
 
-// arguments: start position, number of elements to delete
-//console.log( ar.splice(3, 2) ); // ["a", "b"]
+//======= ADD MORE PERSONNEL: ===========//
 
-// on the click of any of these specific inputs, do this one big function that runs all other funcs
+$('.add-personnel').on('click', function(e){
+	e.preventDefault();
+	var currAmt = $('.personnel-inputs').attr('persons');
+	var newAmt = Number(currAmt) + 1; 
+
+	$('ol.personnel-inputs').append('<li><input type="text" id="person' + newAmt + '" name="person' + newAmt + '" /></li>');
+	$('.personnel-inputs').attr('persons', newAmt);
+});
+
+
+//======= GET TOTALS OF THINGS: =========//
+		
+		// on the click of any of these specific inputs, do this one big function that runs all other funcs to get totals
 
 	function getLunchCost(){
 		
 		var quantity = $('#lunch-qty').val(); 
 		var totalLunch = quantity * 10;
-		var lunchCost = totalLunch.toFixed(2);
+		var lunchCost = totalLunch.toFixed(2);  // forces number to 2 decimal places
 
-		$('#lunch-total').val(lunchCost);  // forces number to 2 decimal places
+		$('#lunch-total').val(lunchCost); 
 
-		return totalLunch;
+		return Number(totalLunch);
 
 	}
 
@@ -36,27 +35,53 @@ console.log(blocks);
 		
 		var quantity = $('#qty-booth').val(); 
 		var totalBooth = quantity * 500;
-		var boothCost = totalBooth.toFixed(2);
-
-		$('#equals').val(boothCost);  // forces number to 2 decimal places
+		var boothCost = totalBooth.toFixed(2); // forces number to 2 decimal places
+		// console.log('boothCost: ', boothCost);
+		$('#equals').val(boothCost); 
 	
 		return totalBooth;
+		// console.log("getBoothCost: ", totalBooth);	
 
 	}
 
 	function getBlockCost() {
 
+		var checked = $('#booth-information :checked');
+		var total = checked.map(function(){
+			return this.value;
+			console.log(value);
+		}).get();
+
+		// console.log('block array: ', total);
+
+		var totalBlock = 0;
+		$.each(checked, function(i, checkBox){
+			var value = checkBox.value;
+			totalBlock += Number(value);
+		});
+
+		
+		// console.log('block total: ', totalBlock);
+		var totalBlock = totalBlock.toFixed(2);
+		$('#qty-block').val(totalBlock);
+
+		return totalBlock; // returns total of array number values
 	}
 
 
 	function getDepositCost(){
 
-		var boothCost = getBoothCost();
-		var totalDeposit = boothCost / 2;
-		var depositCost = totalDeposit.toFixed(2);
+		var boothCost = Number(getBoothCost());
+		console.log('boothCost: ', boothCost);
+		var blockCost = Number(getBlockCost());
+		console.log('blockCost:', blockCost);
+		var totalForBoth = boothCost + blockCost;
+		console.log('totalForBoth: ', totalForBoth);
+		var totalDeposit = totalForBoth / 2;
+		var depositCost = totalDeposit.toFixed(2); // format for input box
 
-		$('#deposit').val(depositCost);  // forces number to 2 decimal places
-
+		$('#deposit').val(depositCost); 
+		// console.log('depositCost: ', depositCost);
 		return totalDeposit;
 	}
 
@@ -69,10 +94,9 @@ console.log(blocks);
 	}
 
 
-
 	function getTotalCost(){
 
-		var totalCost = getLunchCost() + getBoothCost() + getDepositCost();
+		var totalCost = getLunchCost() + getBoothCost() + getBlockCost();
 		console.log("total:" , totalCost);
 
 	}
@@ -81,14 +105,15 @@ $("#lunch-qty, #qty-booth").on('keyup', function(){
 	getRemainder();
 });
 
-// $("#lunch-qty, #qty-booth").on('keyup', function(){
-// 	getTotalCost();
-// });
+$('#booth-information :checkbox').on('change', function(){
+	getRemainder();
+});
 
 
 
+//======= DRAFT AN EMAIL WITH ALL THE THINGS: =========//
 
-// NON PHP OPTION: SENDS ALL FORM INFO TO EMAIL 
+	// NON PHP OPTION - SENDS ALL FORM INFO TO USER'S EMAIL PROGRAM
 
 	$( "#submit-form" ).on( "click", function(e){
 			e.preventDefault();
@@ -105,7 +130,7 @@ $("#lunch-qty, #qty-booth").on('keyup', function(){
 
 			var messageBody = '';
 			
-	// MAKE THE FOLLOWING INTO A FUNCTION AT SOME POINT...
+		// MAKE THE FOLLOWING INTO A FUNCTION AT SOME POINT...??
 
 			messageBody += 'CONTACT INFO\n'
 
@@ -170,9 +195,6 @@ $("#lunch-qty, #qty-booth").on('keyup', function(){
           			messageBody += val.name + ": " + val.value + '\n';
          		});
 
-
-
-
 		    url = "mailto:robyn.gilb@gmail.com?subject=Expo%20Registration&body=" + encodeURIComponent(messageBody);
     		console.log('Contact Info Section: ', contactInfo);
     		console.log('url: ', url);
@@ -180,7 +202,6 @@ $("#lunch-qty, #qty-booth").on('keyup', function(){
 
 
 		});
-
 
 });
 
@@ -238,4 +259,36 @@ $("#lunch-qty, #qty-booth").on('keyup', function(){
 	// 	// $('#lunch-total').val(total.toFixed(2));  // forces number to 2 decimal places
 	// });
 
+/////
 
+	// // var blocks = [];
+
+	// 	$('#booth-information :checkbox').on('change', function(){
+	// 		value = $(this).val();
+	// 	// console.log($(this).val());
+	// 		if(this.checked) {
+	// 			console.log("checked");
+	// 			blocks.push(value);
+	// 		} else {
+	// 			var index = blocks.indexOf(this);
+	// 			blocks.splice(index, 1);
+	// 		}
+		
+	// 		console.log("array: ", blocks);
+
+	// 		var total = 0; 
+
+	// 		$.each(blocks, function(i,val){
+	// 			console.log('value',val);
+	// 			total += Number(val);
+	// 		});
+
+	// 	console.log('total',total);
+	// 	var totalBlock = total.toFixed(2);
+	// 	$('#qty-block').val(totalBlock);
+
+	// }); 
+
+
+	// arguments: start position, number of elements to delete
+	//console.log( ar.splice(3, 2) ); // ["a", "b"]

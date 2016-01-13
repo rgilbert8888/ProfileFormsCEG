@@ -144,21 +144,17 @@
 						<p>Tickets can be picked up at the show office when you check-in on set-up day.
 						</p>
 					</div>
-					<div persons="10">
+					<div>
 						<h4> Please list the names of personnel who will be working in your booth.</h4>
-						<ol>
+						<ol class="personnel-inputs" persons="6">
 				        	<li><input type="text" id="person1" name="person1" /></li>
 					        <li><input type="text" id="person2" name="person1" /></li>
 					        <li><input type="text" id="person3" name="person1" /></li>
 					        <li><input type="text" id="person4" name="person1" /></li>
 					        <li><input type="text" id="person5" name="person1" /></li>
 					        <li><input type="text" id="person6" name="person1" /></li>
-					        <li><input type="text" id="person7" name="person1" /></li>
-					        <li><input type="text" id="person8" name="person1" /></li>
-					        <li><input type="text" id="person9" name="person1" /></li>
-					        <li><input type="text" id="person10" name="person1" /></li>
 				       </ol>
-				       <button>Add More Names</button>
+				       <button class="add-personnel">Add More Names</button>
 				    </div>
 				</fieldset>
 			</form>
@@ -192,21 +188,31 @@
 		    		</div>
 		    		<label for="qty-block">Block Total:</label>
 				        <input type="text" id="qty-block" name="qty-block" value="0.00" readonly="readonly" />			       
-				    <div>
+				    <div class="pref-booths">
 				    	<h4>Preferred Booth/Block Number(s)</h4>
-				        <label for="pref-first">1st Choice:</label>
-				        <input type="text" id="pref-first" name="pref-first"/>		        
-				        <label for="pref-second">2nd Choice:</label>
-				        <input type="text" id="pref-second" name="pref-second"/>		
-				        <label for="pref-first">3rd Choice:</label>
-				        <input type="text" id="pref-third" name="pref-third" />
+				    	<div>
+				        	<label for="pref-first">1st Choice:</label>
+				        	<input type="text" id="pref-first" name="pref-first"/>		
+				        </div>
+				        <div>       
+				        	<label for="pref-second">2nd Choice:</label>
+				        	<input type="text" id="pref-second" name="pref-second"/>	
+				        </div>
+				        <div>	
+				       		<label for="pref-first">3rd Choice:</label>
+				        	<input type="text" id="pref-third" name="pref-third" />
+				        </div>
 				    </div>				    
-				    <div>
+				    <div class="pref-floors clear">
 				    	<h4>Preferred Floor</h4>
-				        <label for="area-first">1st Choice:</label>
-				        <input type="text" id="area-first" name="area-first" />		        
-				        <label for="area-second">2nd Choice:</label>
-				        <input type="text" id="area-second" name="area-second" />		
+				    	<div>
+					        <label for="area-first">1st Choice:</label>
+					        <input type="text" id="area-first" name="area-first" />		 
+				        </div>      
+				        <div> 
+					        <label for="area-second">2nd Choice:</label>
+					        <input type="text" id="area-second" name="area-second" />	
+				        </div>	
 				    </div>
 			    </fieldset>
 			</form>	
@@ -323,8 +329,9 @@
 					</div>
 		    	</fieldset>
 			</form>
-
-			<button type="submit" name="submit" id="submit-form">Submit</button>
+			<div class="submit">
+				<button type="submit" name="submit" id="submit-form">Email Form</button>
+			</div>
 	<!-- end content -->
 		</div>
 <!-- end wrapper -->
